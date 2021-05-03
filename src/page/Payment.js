@@ -78,11 +78,7 @@ export default function Payment({ adds }) {
     } catch (err) {
       console.log(err);
     }
-  }, [createOrder, adds, cart, history]);
-
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
+  }, [createOrder, adds, cart, history, removeItem, user?._id]);
 
   const handleClose = () => {
     setOpen(false);

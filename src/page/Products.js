@@ -45,8 +45,6 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
 }));
-
-const cards = [1, 2, 3, 4];
 function Product() {
   const classes = useStyles();
   const { loading, error, data } = useQuery(PRODUCT_QUERY);

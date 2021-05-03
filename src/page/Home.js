@@ -10,9 +10,7 @@ import LinkM from "@material-ui/core/Link";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import { Link } from "react-router-dom";
 import { useQuery } from "@apollo/client";
-import { useSession } from "../contexts/SessionContext";
 import { PRODUCT_QUERY } from "../graphql/productQuery";
-const banner = require("../img/banner.jpg");
 
 const useStyles = makeStyles((theme) => ({
   icon: {
@@ -65,7 +63,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Home() {
   const classes = useStyles();
-  const { user } = useSession();
   const { loading, error, data } = useQuery(PRODUCT_QUERY);
   if (loading) {
     return "Loading ...";
@@ -74,14 +71,6 @@ export default function Home() {
     console.log(error.message);
     return "Error !!";
   }
-  // const { loading, error, data } = useQuery(USERS_QUERY);
-  // if (loading) {
-  //   return "Loading . . .";
-  // }
-  // if (error) {
-  //   return "Error ...";
-  // }
-  // console.log(data);
   return (
     <React.Fragment>
       <CssBaseline />
